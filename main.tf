@@ -81,4 +81,7 @@ resource "helm_release" "grafana" {
     name  = "ingress.hosts"
     value = "{grafana.demo.cluster}"
   }
+  depends_on = [
+    helm_release.nginx-ingress
+  ]
 }
